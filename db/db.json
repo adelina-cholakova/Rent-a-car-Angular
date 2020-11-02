@@ -1,0 +1,142 @@
+{
+  "customers": [
+    {
+      "id": 2,
+      "name": "John",
+      "email": "john@gmail.com",
+      "phone": "0545645555"
+    },
+    {
+      "id": 4,
+      "name": "John Smith",
+      "email": "john@gmail.com",
+      "phone": "6531554447"
+    },
+    {
+      "id": 5,
+      "name": "Jimmy",
+      "email": "jimmy@abv.bg",
+      "phone": "5145485454"
+    },
+    {
+      "id": 6,
+      "name": "Maxxxxx",
+      "email": "max@gmail.com",
+      "phone": "1215153554"
+    }
+  ],
+  "vehicles": [
+    {
+      "id": 1,
+      "type": "ESTATE",
+      "brand": "Toyotta",
+      "model": "Auris",
+      "year": 2016,
+      "fuelType": "DIESEL",
+      "seats": 5,
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/d/de/2017_Toyota_Corolla_%28ZRE182R%29_Ascent_hatchback_%282018-08-06%29_04.jpg",
+      "pricePerDay": 50,
+      "count": 5
+    },
+    {
+      "id": 2,
+      "type": "ESTATE",
+      "brand": "Lada",
+      "model": "Niva",
+      "year": 1998,
+      "fuelType": "DIESEL",
+      "seats": 4,
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Lada_2107_aka_Lada_Riva_October_1995_1452cc.jpg",
+      "pricePerDay": 8,
+      "count": 2
+    },
+    {
+      "id": 5,
+      "type": "LUXURY",
+      "brand": "Merzedes",
+      "model": "E-Class",
+      "year": 2018,
+      "fuelType": "HIBRID",
+      "seats": 5,
+      "picture": "https://i.dir-i.net/CMS/2020/03/04/e/5f_e0wdsj.jpg",
+      "pricePerDay": 80,
+      "count": 6
+    },
+    {
+      "id": 6,
+      "type": "LUXURY",
+      "brand": "Porsche",
+      "model": "Quatro",
+      "year": 2019,
+      "fuelType": "ELECTRIC",
+      "seats": 6,
+      "picture": "https://newsroom.porsche.com/.imaging/mte/porsche-templating-theme/teaser_700x395/dam/pnr/2020/company/Deliveries-Q1-2020/b2-The-current-Porsche-911-model-series-is-still-popular-with-customers.jpg/jcr:content/b2-The%20current%20Porsche%20911%20model%20series%20is%20still%20popular%20with%20customers.jpg",
+      "pricePerDay": 80,
+      "count": 3
+    },
+    {
+      "id": 7,
+      "type": "LUXURY",
+      "brand": "Ferrari",
+      "model": "Tributo Spider",
+      "year": 2014,
+      "fuelType": "HIBRID",
+      "seats": 2,
+      "picture": "https://cdn.motor1.com/images/mgl/ge9L4/s1/ferrari-f8-spider-fan-render.jpg",
+      "pricePerDay": 80,
+      "count": 4
+    },
+    {
+      "id": 8,
+      "type": "LUXURY",
+      "brand": "BMW",
+      "model": "5",
+      "year": 2014,
+      "fuelType": "HIBRID",
+      "seats": 4,
+      "picture": "https://cdn.24.co.za/files/Cms/General/d/5969/6f6b948639b64a5f9c3499a0b448b260.jpg",
+      "pricePerDay": 80,
+      "count": 7
+    },
+    {
+      "id": 9,
+      "type": "LUXURY",
+      "brand": "Merzedes",
+      "model": "benz",
+      "year": 2014,
+      "fuelType": "DIESEL",
+      "seats": 6,
+      "picture": "https://www.mercedes-benz.bg/passengercars/_jcr_content/image.MQ6.2.2x.20190123105639.png",
+      "pricePerDay": 60,
+      "count": 5
+    },
+    {
+      "id": 10,
+      "type": "LUXURY",
+      "brand": "BMW",
+      "model": "5",
+      "year": 2014,
+      "fuelType": "HIBRID",
+      "seats": 4,
+      "picture": "https://cdn.24.co.za/files/Cms/General/d/5969/6f6b948639b64a5f9c3499a0b448b260.jpg",
+      "pricePerDay": 80,
+      "count": 7
+    }
+  ],
+  "rents": [
+    {
+      "customerId": 4,
+      "vehicleId": 1,
+      "start": "2020-11-01T22:00:00.000Z",
+      "end": "2020-11-09T22:00:00.000Z",
+      "id": 1
+    },
+    {
+      "customerId": 2,
+      "vehicleId": 2,
+      "start": "2020-10-31T22:00:00.000Z",
+      "end": "2020-11-29T22:00:00.000Z",
+      "id": 3
+    }
+  ]
+}

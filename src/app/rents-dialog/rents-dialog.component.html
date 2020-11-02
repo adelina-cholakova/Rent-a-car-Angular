@@ -1,0 +1,40 @@
+<h2 mat-dialog-title>Rent {{ vehicle.brand }} {{ vehicle.model }}</h2>
+
+<form *ngIf="formGroup" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <mat-dialog-content>
+    <div>
+      <mat-form-field class="full-width">
+        <mat-select formControlName="customerId" required>
+          <mat-option
+            *ngFor="let customer of customers"
+            [value]="customer.id"
+            >{{ customer.name }}</mat-option
+          >
+        </mat-select>
+        <mat-label>Customer</mat-label>
+        <mat-error *ngIf="formGroup.get('customerId').errors?.required"
+          >Customer is required</mat-error>
+      </mat-form-field>
+      <div>
+        <mat-form-field>
+          <mat-label>Enter a date range</mat-label>
+          <mat-date-range-input [rangePicker]="picker">
+            <input matStartDate placeholder="Start date" formControlName="start"/>
+            <input matEndDate placeholder="End date" formControlName="end"/>
+          </mat-date-range-input>
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
+          <mat-error *ngIf="formGroup.get('start').errors?.required"
+          >Date is required</mat-error>
+        </mat-form-field>
+
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-raised-button color="primary">Rent</button>
+  </mat-dialog-actions>
+</form>

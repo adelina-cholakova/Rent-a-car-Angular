@@ -1,0 +1,12 @@
+mat-dialog-content {
+  width: 300px;
+}
+
+mat-form-field  {
+  width: 100%;
+}
+
+.customer-edit-heading {
+  display: flex;
+  justify-content: space-between;
+}

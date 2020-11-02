@@ -1,0 +1,11 @@
+{
+  "customers": [
+    {
+      "isAdmin": true,
+      "name": "admin",
+      "email": "admin@gmail.com",
+      "phone": "08451235"
+    }
+
+  ]
+}

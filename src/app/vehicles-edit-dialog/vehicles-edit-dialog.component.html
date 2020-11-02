@@ -1,0 +1,171 @@
+<div class="header-container">
+  <h2 mat-dialog-title *ngIf="vehicle.id">Edit Vehicle</h2>
+  <h2 mat-dialog-title *ngIf="!vehicle.id">Create Vehicle</h2>
+  <button
+    mat-icon-button
+    color="primary"
+    type="button"
+    title="Rent a car"
+    (click)="closeFrom()"
+  >
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+<form
+  *ngIf="formGroup"
+  [formGroup]="formGroup"
+  (ngSubmit)="onSubmit()"
+  class="vehicles-form"
+>
+  <mat-dialog-content>
+    <div>
+      <mat-form-field class="full-width">
+        <mat-select formControlName="type" required>
+          <mat-option value="ECONOMY">Economy</mat-option>
+          <mat-option value="ESTATE">Estate</mat-option>
+          <mat-option value="LUXURY">Luxury</mat-option>
+          <mat-option value="SUV">SUV</mat-option>
+          <mat-option value="CARGO">Cargo</mat-option>
+        </mat-select>
+        <mat-label>Vehicle type</mat-label>
+        <mat-error *ngIf="formGroup.get('type').errors?.required"
+          >Vehicle type is required</mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="full-width">
+        <input
+          matInput
+          type="text"
+          placeholder="Brand"
+          formControlName="brand"
+          required
+        />
+        <mat-error *ngIf="formGroup.get('brand').errors?.required"
+          >Brand is required</mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="full-width">
+        <input
+          matInput
+          type="text"
+          placeholder="Model"
+          formControlName="model"
+          required
+        />
+        <mat-error *ngIf="formGroup.get('model').errors?.required"
+          >Model is required</mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="full-width">
+        <input
+          matInput
+          type="number"
+          placeholder="Year"
+          formControlName="year"
+          required
+        />
+        <mat-error *ngIf="formGroup.get('year').errors?.required"
+          >Year is required</mat-error
+        >
+        <mat-error *ngIf="formGroup.get('year').errors?.min"
+          >Year must be later than 1990</mat-error
+        >
+        <mat-error *ngIf="formGroup.get('year').errors?.max"
+          >Year must be earlier than 1990</mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="full-width">
+        <mat-select formControlName="fuelType" required>
+          <mat-option value="PETROL">Petrol</mat-option>
+          <mat-option value="DIESEL">Diesel</mat-option>
+          <mat-option value="HIBRID">Hibrid</mat-option>
+          <mat-option value="ELECTRIC">Electric</mat-option>
+        </mat-select>
+        <mat-label>Fuel type</mat-label>
+        <mat-error *ngIf="formGroup.get('fuelType').errors?.required"
+          >Fuel type is required</mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="full-width">
+        <input
+          matInput
+          type="number"
+          placeholder="Seats"
+          formControlName="seats"
+          required
+        />
+        <mat-error *ngIf="formGroup.get('seats').errors?.required"
+          >Seats field is required</mat-error
+        >
+        <mat-error *ngIf="formGroup.get('seats').errors?.min"
+          >Seats should not be less than two</mat-error
+        >
+        <mat-error *ngIf="formGroup.get('seats').errors?.max"
+          >Seats should not be more than two</mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="full-width">
+        <input
+          matInput
+          type="text"
+          placeholder="Picture url"
+          formControlName="picture"
+          required
+          id="imgName"
+        />
+        <mat-error *ngIf="formGroup.get('picture').errors?.required"
+          >Vehicle picture is required</mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="full-width">
+        <input
+          matInput
+          type="number"
+          placeholder="Price per day"
+          formControlName="pricePerDay"
+          required
+        />
+        <mat-error *ngIf="formGroup.get('pricePerDay').errors?.required"
+          >Price is required</mat-error
+        >
+        <mat-error *ngIf="formGroup.get('pricePerDay').errors?.min"
+          >Price should be greater than zero</mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="full-width">
+        <input
+          matInput
+          type="number"
+          placeholder="Count"
+          formControlName="count"
+          required
+        />
+        <mat-error *ngIf="formGroup.get('count').errors?.required"
+          >Count is required</mat-error
+        >
+        <mat-error *ngIf="formGroup.get('count').errors?.min"
+          >Count should not be less than zero</mat-error
+        >
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-raised-button color="primary">Save</button>
+  </mat-dialog-actions>
+</form>

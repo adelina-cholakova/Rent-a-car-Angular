@@ -1,0 +1,76 @@
+<div class="customer-edit-heading">
+  <h2 mat-dialog-title *ngIf="customer.id">Edit Customer</h2>
+  <h2 mat-dialog-title *ngIf="!customer.id">Create Customer</h2>
+  <button
+    mat-icon-button
+    color="primary"
+    type="button"
+    title="Rent a car"
+    (click) = closeForm()
+  >
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+<form *ngIf="formGroup" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <mat-dialog-content>
+    <div>
+      <mat-form-field class="full-width">
+        <input
+          matInput
+          type="text"
+          placeholder="Name"
+          formControlName="name"
+          required
+        />
+        <mat-error *ngIf="formGroup.get('name').errors?.required"
+          >Name is required</mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="full-width">
+        <input
+          matInput
+          type="text"
+          placeholder="Email"
+          formControlName="email"
+          required
+        />
+        <mat-error *ngIf="formGroup.get('email').errors?.required"
+          >Email is required</mat-error
+        >
+        <mat-error *ngIf="formGroup.get('email').errors?.email"
+          >Email is not valid</mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="full-width">
+        <input
+          matInput
+          type="tel"
+          placeholder="Phone"
+          formControlName="phone"
+          required
+        />
+
+        <mat-error *ngIf="formGroup.get('phone').errors?.required"
+          >Phone is required</mat-error
+        >
+        <mat-error *ngIf="formGroup.get('phone').errors?.pattern"
+          >Phone number is not in correct pattern</mat-error
+        >
+        <mat-error *ngIf="formGroup.get('phone').errors?.minlength"
+          >Phone number should be 10 symbols</mat-error
+        >
+        <mat-error *ngIf="formGroup.get('phone').errors?.maxlength"
+          >Phone number should be 10 symbols</mat-error
+        >
+
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-raised-button color="primary">Save</button>
+  </mat-dialog-actions>
+</form>

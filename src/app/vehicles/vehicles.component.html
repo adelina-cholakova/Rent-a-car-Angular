@@ -1,0 +1,64 @@
+
+  <div class="vehicles-container">
+    <div class="btn-holder">
+      <button
+      mat-raised-button
+      color="primary"
+      type="button"
+      (click)="addVehicle()"
+    >
+      New vehicle
+    </button>
+    </div>
+
+
+    <mat-card *ngFor="let vehicle of vehicles">
+      <mat-card-header>
+        <mat-card-title>{{ vehicle.brand }}</mat-card-title>
+        <mat-card-subtitle>{{ vehicle.model }}</mat-card-subtitle>
+      </mat-card-header>
+      <img
+        mat-card-image
+        class="vehicle-img"
+        [src]="vehicle.picture"
+        alt="Vehicle picture"
+      />
+      <mat-card-content>
+        <p>Vehicle type: {{ vehicle.type.toLocaleLowerCase() }}</p>
+        <p>Construction year: {{ vehicle.year }}</p>
+        <p>Fuel type: {{ vehicle.fuelType.toLowerCase() }}</p>
+        <p>Number of seats: {{ vehicle.seats }}</p>
+        <p>Price per day: {{ vehicle.pricePerDay }}</p>
+        <p>Available vehicles: {{ vehicle.count }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button
+          mat-icon-button
+          color="primary"
+          type="button"
+          (click)="editVehicle(vehicle)"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          color="warn"
+          type="button"
+          (click)="deleteVehicle(vehicle)"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+
+        <button
+          mat-icon-button
+          color="primary"
+          type="button"
+          title="Rent a car"
+          (click)="rent(vehicle)"
+        >
+          <mat-icon>directions_car</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+

@@ -1,0 +1,24 @@
+
+.vehicles-container {
+  display: flex;
+  margin: 0 auto;
+  width: 90%;
+  flex-wrap: wrap;
+}
+mat-card {
+  margin-right: 20px;
+  flex: 1 0 20%;
+  margin-bottom: 20px;
+
+}
+.btn-holder {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.vehicle-img {
+  width: 200px;
+  height: 150px;
+  margin: 0 auto;
+}
+

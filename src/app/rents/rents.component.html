@@ -1,0 +1,37 @@
+<div class="rents-container">
+  <table mat-table [dataSource]="rents" class="rents-table">
+    <ng-container matColumnDef="vehicle">
+      <th mat-header-cell *matHeaderCellDef>Vehicle</th>
+      <td mat-cell *matCellDef="let rent">
+        {{ rent.vehicle.brand }} {{ rent.vehicle.model }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="customer">
+      <th mat-header-cell *matHeaderCellDef>Customer</th>
+      <td mat-cell *matCellDef="let rent">{{ rent.customer.name }}</td>
+    </ng-container>
+    <ng-container matColumnDef="from">
+      <th mat-header-cell *matHeaderCellDef>From</th>
+      <td mat-cell *matCellDef="let rent">{{ rent.start | date }}</td>
+    </ng-container>
+    <ng-container matColumnDef="to">
+      <th mat-header-cell *matHeaderCellDef>To</th>
+      <td mat-cell *matCellDef="let rent">{{ rent.end | date }}</td>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let rent">
+        <button
+          mat-icon-button
+          color="warn"
+          type="button"
+          (click)="deleteRent(rent)"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>
